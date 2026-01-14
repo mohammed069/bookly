@@ -1,4 +1,3 @@
-import 'package:bookly/constants.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
