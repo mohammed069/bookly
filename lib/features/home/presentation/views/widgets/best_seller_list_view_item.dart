@@ -13,7 +13,7 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.go(AppRouter.bookDetailsView);
+        context.push(AppRouter.bookDetailsView);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),

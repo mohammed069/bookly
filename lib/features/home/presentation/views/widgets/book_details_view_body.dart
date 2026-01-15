@@ -36,6 +36,7 @@ class BookDetailsViewBody extends StatelessWidget {
               ),
             ),
           ),
+          BookRating(mainAxisAlignment: MainAxisAlignment.center),
         ],
       ),
     );
