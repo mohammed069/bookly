@@ -23,7 +23,7 @@ class BookDetailsViewBody extends StatelessWidget {
             CustomBookDerailsAppBar(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * .19),
-              child: CustomBookItem(),
+              child: CustomBookItem(imageUrl: ''),
             ),
             Text(
               'The Jungle Book',
