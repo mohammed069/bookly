@@ -32,7 +32,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
 
     final progress = position.pixels / position.maxScrollExtent;
 
-    if (progress >= 0.7 && !isLoading) {
+    if (progress >= 0.85 && !isLoading) {
       isLoading = true;
       await BlocProvider.of<FeaturedBooksCubit>(
         context,
