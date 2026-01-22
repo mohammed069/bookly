@@ -19,3 +19,9 @@ class FeaturedBooksFailure extends FeaturedBooksState {
 
   FeaturedBooksFailure({required this.errorMessage});
 }
+
+class FeaturedBooksPaginationFailure extends FeaturedBooksState {
+  final String errorMessage;
+
+  FeaturedBooksPaginationFailure({required this.errorMessage});
+}
