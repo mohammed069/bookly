@@ -3,6 +3,7 @@ import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_state.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_books_list_view.dart';
+import 'package:bookly/features/home/presentation/views/widgets/featured_books_list_view_loading_indecator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
