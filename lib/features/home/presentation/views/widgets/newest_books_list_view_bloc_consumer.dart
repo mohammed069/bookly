@@ -22,7 +22,7 @@ class NewestBooksListViewBlocConsumer extends StatelessWidget {
           return SliverList.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
-              return BookListViewItem();
+              return BookListViewItem(book: state.books[index]);
             },
           );
         }

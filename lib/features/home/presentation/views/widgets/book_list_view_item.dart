@@ -1,13 +1,16 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
+  const BookListViewItem({super.key, required this.book});
+
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class BookListViewItem extends StatelessWidget {
                     color: Colors.red,
                     image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage(AssetsData.testImage),
+                      image: CachedNetworkImageProvider(book.image ?? ''),
                     ),
                   ),
                 ),
@@ -43,7 +46,7 @@ class BookListViewItem extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * .5,
                       child: Text(
-                        'HarryPotter and the Goblet of Fire',
+                        book.title,
                         style: Styles.textStyle20.copyWith(
                           fontFamily: kGtSectraFine,
                         ),
@@ -52,7 +55,7 @@ class BookListViewItem extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'J.k. Rowling',
+                      book.authorName ?? 'No Author',
                       style: Styles.textStyle14,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -61,7 +64,7 @@ class BookListViewItem extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            '19.99 \$',
+                            '${book.price ?? '19.99'} \$',
                             style: Styles.textStyle20.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
