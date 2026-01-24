@@ -1,8 +1,12 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly/features/home/presentation/manager/newest_books_cubit/newest_books_state.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_books_list_view_bloc_consumer.dart';
+import 'package:bookly/features/home/presentation/views/widgets/newest_books_list_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -25,11 +29,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate((context, index) {
-            return BookListViewItem();
-          }, childCount: 10),
-        ),
+        NewestBooksListViewBlocConsumer(),
       ],
     );
   }

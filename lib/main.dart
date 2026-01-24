@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           create: (context) {
             return NewestBooksCubit(
               FetchNewestBooksUseCase(getIt.get<HomeRepoImpl>()),
-            );
+            )..fetchNewestBooks();
           },
         ),
       ],
